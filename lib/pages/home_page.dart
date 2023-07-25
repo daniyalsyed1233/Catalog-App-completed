@@ -16,7 +16,7 @@ class _HomePageState extends State<HomePage> {
   final int days = 30;
 
   final String name = "bata";
-
+  Item? item;
   @override
   void initState() {
     super.initState();
@@ -25,15 +25,15 @@ class _HomePageState extends State<HomePage> {
 
   loadData() async {
     final catalogJson =
-        await rootBundle.loadString("assests/files/catalog.json");
+        await rootBundle.loadString("assets/files/catalog.json");
     final decodeData = jsonDecode(catalogJson);
     var proudctsData = decodeData["products"];
-    CatalogModel.items =
-        List.from(proudctsData).map((item) => Item.fromMap(item)).toList();
+    item = Item.fromJson(decodeData);
+    setState(() {});
   }
 
+  @override
   Widget build(BuildContext context) {
-    final dummyList = List.generate(50, (index) => CatalogModel.items[0]);
     return Scaffold(
       appBar: AppBar(
         title: Text(
@@ -41,17 +41,21 @@ class _HomePageState extends State<HomePage> {
           style: TextStyle(color: Colors.black),
         ),
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: ListView.builder(
-          itemCount: dummyList.length,
-          itemBuilder: (context, index) {
-            return ItemWidget(
-              item: dummyList[index],
-            );
-          },
-        ),
-      ),
+      body: item == null
+          ? Center(
+              child: CircularProgressIndicator(),
+            )
+          : Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: ListView.builder(
+                itemCount: item!.products?.length,
+                itemBuilder: (context, index) {
+                  return ItemWidget(
+                    item: item!.products![index],
+                  );
+                },
+              ),
+            ),
       drawer: MyDrawer(),
     );
   }

@@ -5,79 +5,79 @@
     "desc" : "Apple iphone 14th generation",
     "price": 999,
     "color": "#33505a",
-    "image": "assets/iamges/ht.png"
+    "image": "assets/images/IP.png"
 },
 {
     "id": 2,
-    "name" : "IPhone 14 pro",
+    "name" : "IPad",
     "desc" : "Apple iphone 14th generation",
     "price": 999,
     "color": "#33505a",
-    "image": "assets/ht.png"
+    "image": "assets/images/ipad.jpg"
 },
 {
     "id": 3,
-    "name" : "IPhone 14 pro",
+    "name" : "MacBook ",
     "desc" : "Apple iphone 14th generation",
-    "price": 999,
+    "price": 1000,
     "color": "#33505a",
-    "image": "assets/ht.png"
+    "image": "assets/images/MB.png"
 },
 {
     "id": 4,
-    "name" : "IPhone 14 pro",
-    "desc" : "Apple iphone 14th generation",
-    "price": 999,
+    "name" : "Samsung Fold 2",
+    "desc" : "2nd generation",
+    "price": 500,
     "color": "#33505a",
-    "image": "assets/ht.png"
+    "image": "assets/images/sm.png"
 },
 {
     "id": 5,
-    "name" : "IPhone 14 pro",
-    "desc" : "Apple iphone 14th generation",
-    "price": 999,
+    "name" : "Galaxy Gear ",
+    "desc" : "Gear Watch",
+    "price": 300,
     "color": "#33505a",
-    "image": "assets/ht.png"
+    "image": "assets/images/SG.jpg"
 },
 {
     "id": 6,
-    "name" : "IPhone 14 pro",
-    "desc" : "Apple iphone 14th generation",
-    "price": 999,
+    "name" : "AirPods",
+    "desc" : "Apple AirPods Pro",
+    "price": 600,
     "color": "#33505a",
-    "image": "assets/ht.png"
+    "image": "assets/images/Ap.png"
 },
 {
     "id": 7,
-    "name" : "IPhone 14 pro",
-    "desc" : "Apple iphone 14th generation",
-    "price": 999,
+    "name" : "I Watch",
+    "desc" : "Apple I Watch series 7",
+    "price": 800,
     "color": "#33505a",
-    "image": "assets/ht.png"
+    "image": "assets/images/AW.png"
 },
 {
     "id": 8,
-    "name" : "IPhone 14 pro",
-    "desc" : "Apple iphone 14th generation",
+    "name" : "Samsung S90 ",
+    "desc" : "Galaxy A90 5G Android smartphone",
     "price": 999,
     "color": "#33505a",
-    "image": "assets/ht.png"
+    "image": "assets/images/s90.png"
 },
 {
     "id": 9,
-    "name" : "IPhone 14 pro",
-    "desc" : "Apple iphone 14th generation",
+    "name" : "Samsung 21 Ultra ",
+    "desc" : "Galaxy S series",
     "price": 999,
     "color": "#33505a",
-    "image": "assets/ht.png"
+    "image": "assets/images/s21.png"
 },
 {
     "id": 10,
-    "name" : "IPhone 14 pro",
-    "desc" : "Apple iphone 14th generation",
+    "name" : "Apple Air Max",
+    "desc" : "AirPods Max feature incredible high-fidelity audio, Adaptive EQ, Active Noise Cancellation, and spatial audio ",
     "price": 999,
     "color": "#33505a",
-    "image": "assets/ht.png"
+    "image": "assets/images/AM.png"
 }
 
 
