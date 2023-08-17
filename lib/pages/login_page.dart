@@ -116,6 +116,7 @@ class _LoginPageState extends State<LoginPage> {
                           duration: Duration(seconds: 1),
                           height: 50,
                           width: changedButton ? 50 : 100,
+                          //'?'-is conditional operator ':' -otherwise
                           alignment: Alignment.center,
                           child: changedButton
                               ? Icon(

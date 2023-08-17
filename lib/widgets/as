@@ -1,0 +1,31 @@
+ListView.builder(
+                itemCount: item!.products?.length,
+                itemBuilder: (context, index) {
+                  return ItemWidget(
+                    item: item!.products![index],
+                  );
+                },
+              ),
+
+
+              ListTile(
+                onTap: () {},
+                leading: Image.asset(item.image!),
+                title: Text(item.name!),
+                subtitle: Text(item.desc!),
+                trailing: Text(
+                  "\$${item.price}",
+                  textScaleFactor: 1.5,
+                  style: TextStyle(
+                      color: Colors.deepPurple, fontWeight: FontWeight.bold),
+                )),
+                GridView.builder(
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 2),
+                itemBuilder: (context, index) {
+                  return ItemWidget(
+                    item: item!.products![index],
+                  );
+                },
+                itemCount: item!.products!.length,
+              )

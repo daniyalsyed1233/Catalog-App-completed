@@ -10,26 +10,26 @@
 {
     "id": 2,
     "name" : "IPad",
-    "desc" : "Apple iphone 14th generation",
+    "desc" : "Apple IPad 14th generation",
     "price": 999,
     "color": "#33505a",
-    "image": "assets/images/ipad.jpg"
+    "image": "assets/images/cd.png"
 },
 {
     "id": 3,
     "name" : "MacBook ",
-    "desc" : "Apple iphone 14th generation",
+    "desc" : "Apple MacBook with M1 chip ",
     "price": 1000,
     "color": "#33505a",
     "image": "assets/images/MB.png"
 },
 {
     "id": 4,
-    "name" : "Samsung Fold 2",
-    "desc" : "2nd generation",
+    "name" : "play Station 5",
+    "desc" : "Sony PlayStation",
     "price": 500,
     "color": "#33505a",
-    "image": "assets/images/sm.png"
+    "image": "assets/images/6.png"
 },
 {
     "id": 5,
@@ -37,7 +37,7 @@
     "desc" : "Gear Watch",
     "price": 300,
     "color": "#33505a",
-    "image": "assets/images/SG.jpg"
+    "image": "assets/images/7.png"
 },
 {
     "id": 6,
@@ -45,7 +45,7 @@
     "desc" : "Apple AirPods Pro",
     "price": 600,
     "color": "#33505a",
-    "image": "assets/images/Ap.png"
+    "image": "assets/images/1.png"
 },
 {
     "id": 7,
@@ -61,7 +61,7 @@
     "desc" : "Galaxy A90 5G Android smartphone",
     "price": 999,
     "color": "#33505a",
-    "image": "assets/images/s90.png"
+    "image": "assets/images/9.png"
 },
 {
     "id": 9,
@@ -69,15 +69,15 @@
     "desc" : "Galaxy S series",
     "price": 999,
     "color": "#33505a",
-    "image": "assets/images/s21.png"
+    "image": "assets/images/8.png"
 },
 {
     "id": 10,
-    "name" : "Apple Air Max",
+    "name" : "Apple AirPod Max",
     "desc" : "AirPods Max feature incredible high-fidelity audio, Adaptive EQ, Active Noise Cancellation, and spatial audio ",
     "price": 999,
     "color": "#33505a",
-    "image": "assets/images/AM.png"
+    "image": "assets/images/2.png"
 }
 
 

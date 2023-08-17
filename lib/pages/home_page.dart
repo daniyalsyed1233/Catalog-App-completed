@@ -1,9 +1,15 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_catalog/models/catalog.dart';
 import 'package:flutter_catalog/widgets/drawer.dart';
-import 'package:flutter_catalog/widgets/item_widget.dart';
-import 'dart:convert';
+import 'package:velocity_x/velocity_x.dart';
+
+import 'package:flutter_catalog/models/catalog.dart';
+import 'package:flutter_catalog/theme.dart';
+
+import '../home_widgets/catalog_list.dart';
+import '../home_widgets/catalog_header.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -13,10 +19,6 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  final int days = 30;
-
-  final String name = "bata";
-  Item? item;
   @override
   void initState() {
     super.initState();
@@ -28,34 +30,32 @@ class _HomePageState extends State<HomePage> {
         await rootBundle.loadString("assets/files/catalog.json");
     final decodeData = jsonDecode(catalogJson);
     var proudctsData = decodeData["products"];
-    item = Item.fromJson(decodeData);
+    CatalogModel.items = List.from(proudctsData)
+        .map<Item>((item) => Item.fromMap(item))
+        .toList();
+
     setState(() {});
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          "catalog app",
-          style: TextStyle(color: Colors.black),
+      appBar: AppBar(),
+      backgroundColor: MyTheme.creamColor,
+      body: SafeArea(
+        child: Container(
+          padding: Vx.m32,
+          child: Column(
+            children: [
+              CatalogHeader(),
+              if (CatalogModel.items != null && CatalogModel.items.isNotEmpty)
+                CatalogList().expand()
+              else
+                CircularProgressIndicator().py16().centered(),
+            ],
+          ),
         ),
       ),
-      body: item == null
-          ? Center(
-              child: CircularProgressIndicator(),
-            )
-          : Padding(
-              padding: const EdgeInsets.all(16.0),
-              child: ListView.builder(
-                itemCount: item!.products?.length,
-                itemBuilder: (context, index) {
-                  return ItemWidget(
-                    item: item!.products![index],
-                  );
-                },
-              ),
-            ),
       drawer: MyDrawer(),
     );
   }
