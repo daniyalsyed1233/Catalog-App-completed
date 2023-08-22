@@ -57,6 +57,10 @@ import 'dart:convert';
 //   }
 // }
 class CatalogModel {
+  static final catModel = CatalogModel._internal();
+  CatalogModel._internal();
+  factory CatalogModel() => catModel;
+
   static List<Item> items = [
     Item(
         id: 1,
@@ -66,6 +70,11 @@ class CatalogModel {
         color: "#33505a",
         image: "assets/images/IP.png")
   ];
+  //get item by ID
+  Item getById(int id) =>
+      items.firstWhere((element) => element.id == id, orElse: null);
+  // get item by position
+  Item getByPosition(int pos) => items[pos];
 }
 
 class Item {

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_catalog/utils/routes.dart';
+import 'package:velocity_x/velocity_x.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -30,7 +31,7 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Material(
-      color: Color.fromARGB(255, 252, 252, 252),
+      color: context.canvasColor,
       child: SingleChildScrollView(
         child: Form(
           key: _formkey,
@@ -48,7 +49,7 @@ class _LoginPageState extends State<LoginPage> {
                 style: TextStyle(
                     fontSize: 22,
                     fontWeight: FontWeight.bold,
-                    color: Color.fromARGB(255, 23, 1, 1),
+                    color: context.accentColor,
                     fontStyle: FontStyle.italic),
               ),
               Padding(
@@ -57,9 +58,10 @@ class _LoginPageState extends State<LoginPage> {
                   children: [
                     TextFormField(
                       decoration: InputDecoration(
-                        hintText: "Enter UserName",
-                        labelText: "UserName",
-                      ),
+                          hintText: "Enter UserName",
+                          hintStyle: TextStyle(color: context.accentColor),
+                          labelText: "UserName",
+                          labelStyle: TextStyle(color: context.accentColor)),
                       validator: (value) {
                         if (value!.isEmpty) {
                           return "username cannot be empty";
@@ -74,7 +76,9 @@ class _LoginPageState extends State<LoginPage> {
                       obscureText: true,
                       decoration: InputDecoration(
                         hintText: "Enter Password",
+                        hintStyle: TextStyle(color: context.accentColor),
                         labelText: "Password",
+                        labelStyle: TextStyle(color: context.accentColor),
                       ),
                       validator: (value) {
                         if (value!.isEmpty) {
@@ -96,7 +100,7 @@ class _LoginPageState extends State<LoginPage> {
                     //   style: TextButton.styleFrom(maximumSize: Size(100, 50)),
                     // ),
                     Material(
-                      color: Colors.blueAccent,
+                      color: context.backgroundColor,
                       borderRadius:
                           BorderRadius.circular(changedButton ? 50 : 10),
                       child: InkWell(

@@ -1,6 +1,8 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
+import 'package:flutter_catalog/pages/cart_page.dart';
 import 'package:flutter_catalog/theme.dart';
+import 'package:flutter_catalog/utils/routes.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 import 'package:flutter_catalog/models/catalog.dart';
@@ -16,26 +18,28 @@ class HomeDetailPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+      ),
       bottomNavigationBar: Container(
-        color: Colors.white,
+        color: context.cardColor,
         child: ButtonBar(
           alignment: MainAxisAlignment.spaceBetween,
           buttonPadding: EdgeInsets.zero,
           children: [
             "\$${catalog.price}".text.xl4.red800.make(),
             ElevatedButton(
-              onPressed: () {},
-              child: "Buy".text.make(),
+              onPressed: () => Navigator.pushNamed(context, MyRoutes.cartroute),
+              child: "Add to Cart".text.make(),
               style: ButtonStyle(
                   backgroundColor:
-                      MaterialStateProperty.all(MyTheme.darkBluishColor),
+                      MaterialStateProperty.all(context.backgroundColor),
                   shape: MaterialStateProperty.all(StadiumBorder())),
-            ).wh(100, 50)
+            ).wh(120, 50)
           ],
         ).p32(),
       ),
-      backgroundColor: MyTheme.creamColor,
+      backgroundColor: context.canvasColor,
       body: SafeArea(
         bottom: false,
         child: Column(
@@ -50,20 +54,30 @@ class HomeDetailPage extends StatelessWidget {
                     edge: VxEdge.top,
                     arcType: VxArcType.convey,
                     child: Container(
-                      color: Colors.white,
+                      color: context.cardColor,
                       width: context.screenWidth,
                       child: Column(
                         children: [
                           catalog.name.text.xl4
-                              .color(MyTheme.darkBluishColor)
+                              .color(context.accentColor)
                               .lg
                               .bold
                               .make(),
+                          SizedBox(
+                            height: 10,
+                          ),
                           catalog.desc.text
                               .textStyle(context.captionStyle)
                               .xl
+                              .center
+                              .color(context.accentColor)
                               .make(),
                           10.heightBox,
+                          "Catalog's mission statement is “to be Earth's most customer-centric company.” The company's vision statement is “to be earth's most customer-centric company; to build a place where people can come to find and discover anything they might want to buy online."
+                              .text
+                              .center
+                              .color(context.accentColor)
+                              .make()
                         ],
                       ).p64(),
                     )))
