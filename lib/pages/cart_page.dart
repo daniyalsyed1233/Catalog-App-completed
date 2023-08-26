@@ -76,6 +76,10 @@ class _cartList extends StatelessWidget {
             itemCount: _cart.items?.length,
             itemBuilder: (context, index) => ListTile(
               leading: Icon(Icons.done),
+              onTap: () {
+                ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(content: "Buying Not Supported Yet".text.make()));
+              },
               trailing: IconButton(
                   icon: Icon(Icons.remove_circle_outline),
                   onPressed: () {

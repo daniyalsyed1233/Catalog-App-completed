@@ -2,10 +2,12 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_catalog/core/store.dart';
+import 'package:flutter_catalog/models/Cart.dart';
 import 'package:flutter_catalog/utils/routes.dart';
 import 'package:flutter_catalog/widgets/drawer.dart';
 import 'package:velocity_x/velocity_x.dart';
-
+import '';
 import 'package:flutter_catalog/models/catalog.dart';
 
 import '../home_widgets/catalog_list.dart';
@@ -39,19 +41,23 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    final _cart = (VxState.store as MyStore).cart;
     return Scaffold(
       backgroundColor: context
           .canvasColor, //-Theme.of(context).cardColor(if your are not using velcoityX )
       appBar: AppBar(
         backgroundColor: Colors.transparent,
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () => Navigator.pushNamed(context, MyRoutes.cartroute),
-        backgroundColor: context.backgroundColor,
-        child: Icon(
-          Icons.shopping_cart_outlined,
-          color: Colors.white,
-        ),
+      floatingActionButton: VxBuilder(
+        mutations: {AddMutation, RemoveMutation},
+        builder: (context, store, status) => FloatingActionButton(
+          onPressed: () => Navigator.pushNamed(context, MyRoutes.cartroute),
+          backgroundColor: context.backgroundColor,
+          child: Icon(
+            Icons.shopping_cart_outlined,
+            color: Colors.white,
+          ),
+        ).badge(color: Colors.red, size: 20, count: _cart.items.length),
       ),
 
       body: SafeArea(
