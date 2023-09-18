@@ -47,30 +47,32 @@ class HomeDetailPage extends StatelessWidget {
                     child: Container(
                       color: context.cardColor,
                       width: context.screenWidth,
-                      child: Column(
-                        children: [
-                          catalog.name.text.xl4
-                              .color(context.accentColor)
-                              .lg
-                              .bold
-                              .make(),
-                          SizedBox(
-                            height: 10,
-                          ),
-                          catalog.desc.text
-                              .textStyle(context.captionStyle)
-                              .xl
-                              .center
-                              .color(context.accentColor)
-                              .make(),
-                          10.heightBox,
-                          "Catalog's mission statement is “to be Earth's most customer-centric company.” The company's vision statement is “to be earth's most customer-centric company; to build a place where people can come to find and discover anything they might want to buy online."
-                              .text
-                              .center
-                              .color(context.accentColor)
-                              .make()
-                        ],
-                      ).p64(),
+                      child: SingleChildScrollView(
+                        child: Column(
+                          children: [
+                            catalog.name.text.xl4
+                                .color(context.accentColor)
+                                .lg
+                                .bold
+                                .make(),
+                            SizedBox(
+                              height: 10,
+                            ),
+                            catalog.desc.text
+                                .textStyle(context.captionStyle)
+                                .xl
+                                .center
+                                .color(context.accentColor)
+                                .make(),
+                            10.heightBox,
+                            "Catalog's mission statement is “to be Earth's most customer-centric company.” The company's vision statement is “to be earth's most customer-centric company; to build a place where people can come to find and discover anything they might want to buy online."
+                                .text
+                                .center
+                                .color(context.accentColor)
+                                .make()
+                          ],
+                        ).p64(),
+                      ),
                     )))
           ],
         ),
